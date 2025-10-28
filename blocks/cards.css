@@ -7,7 +7,7 @@
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 413px);
   justify-content: center;
   gap: 40px 20px;
   text-overflow: ellipsis;

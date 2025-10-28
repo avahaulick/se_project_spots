@@ -40,6 +40,8 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   max-width: 420px;
+  color: #212121;
+  opacity: 70%;
 }
 
 .profile__edit-btn {
@@ -51,6 +53,8 @@
   border: none;
   display: inline-block;
   width: 150px;
+  text-align: left;
+  padding: 0;
 }
 
 .profile__edit-btn:hover {
@@ -70,7 +74,9 @@
   align-self: flex-end;
   padding: 18px 32px;
   display: flex;
-  gap: 15px;
+  justify-content: center;
+  gap: 8px;
+  border: 2px;
 }
 
 .profile__add-btn:hover {
