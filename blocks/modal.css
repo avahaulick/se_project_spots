@@ -1,0 +1,126 @@
+/* RESPONSIVE DESIGN */
+
+.modal {
+  visibility: hidden;
+  background-color: #00000080;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.modal_is-opened {
+  visibility: visible;
+}
+
+.modal__container {
+  max-width: 730px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 32px 50px;
+  position: relative;
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 32px;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.modal__submit-btn {
+  max-width: 156px;
+  width: 100%;
+  border-radius: 8px;
+  padding-top: 18px;
+  padding-right: 32px;
+  padding-bottom: 18px;
+  padding-left: 32px;
+  gap: 8px;
+  opacity: 1;
+  background: #212121;
+  font-family: Poppins, Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #fff;
+}
+.modal__title {
+  max-width: 169px;
+  width: 100%;
+  margin: 0 0 32px;
+  font-family: Poppins, Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #212121;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__label {
+  margin: 0 0 32px;
+  font-family: Poppins, Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 110.00000000000001%;
+  letter-spacing: 0%;
+  color: #212121;
+  opacity: 70%;
+}
+
+.modal__input {
+  display: block;
+  margin: 8px 0 0;
+  width: 100%;
+  border: 16px;
+  padding: 16px 8px;
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #212121b2;
+  border: 1px solid #000;
+  border-radius: 8px;
+}
+
+.modal__input::placeholder {
+  color: #2121214d;
+}
+
+@media screen and (max-width: 327px) {
+  .modal__container {
+    padding: 0 16px;
+    font-size: 20px;
+  }
+
+  .modal__title {
+    margin: 12px 12px 12px 24px;
+  }
+
+  .modal__submit-btn {
+    display: flex;
+    flex-grow: 1;
+    padding: 16px 8px;
+    min-width: none;
+  }
+}
