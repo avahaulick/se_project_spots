@@ -105,8 +105,8 @@
   color: #2121214d;
 }
 
-@media screen and (max-width: 327px) {
-  .modal__container {
+@media screen and (max-width: 614px) {
+   .modal__container {
     padding: 0 16px;
     font-size: 20px;
   }
@@ -116,9 +116,27 @@
   }
 
   .modal__submit-btn {
-    display: flex;
+     display: flex;
     flex-grow: 1;
-    padding: 16px 8px;
-    min-width: none;
+    padding: 16px 8px; */
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 1272px) {
+   .modal__container {
+    padding: 0 16px;
+    font-size: 20px;
+  }
+
+  .modal__title {
+    margin: 12px 12px 12px 24px;
+  }
+
+  .modal__submit-btn {
+     display: flex;
+    flex-grow: 1;
+    padding: 16px 8px; */
+    max-width: none;
   }
 }

@@ -16,3 +16,9 @@
     padding: 0 16px;
   }
 }
+
+@media screen and (max-width: 1272px) {
+  .page__section {
+    padding: 0 16px;
+  }
+}

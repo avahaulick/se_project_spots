@@ -52,3 +52,13 @@
     height: 288px;
   }
 }
+
+@media screen and (max-width: 1272px) {
+  .cards__list {
+    grid-template-columns: repeat(auto-fit, 288px);
+  }
+
+  .card__image {
+    height: 288px;
+  }
+}
