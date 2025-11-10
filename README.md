@@ -30,7 +30,7 @@ Check out this link https://drive.google.com/file/d/1iqRpX9T5tF9lJTnL7Y6F4pfg_rO
 
 # Git Hub URL link
 
-Check out the site live on get hub at https://github.com/avahaulick/se_project_spots.git
+Check out the site live on get hub at git@github.com:avahaulick/se_project_spots.git
 
 The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
 
