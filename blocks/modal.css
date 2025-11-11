@@ -30,6 +30,8 @@
 
 .modal__close-btn {
   position: absolute;
+  border: none;
+  background-color: #fff;
   top: 32px;
   right: 50px;
   width: 40px;
@@ -118,8 +120,9 @@
 
 @media screen and (max-width: 614px) {
   .modal__container {
-    padding: 0 0 32px;
+    padding: 24px 12px 12px;
     font-size: 20px;
+    margin: 0;
   }
 
   .modal__title {
