@@ -1,6 +1,6 @@
 .footer {
   font-family: Poppins, Arial, Helvetica, sans-serif;
-  opacity: 70%;
+  opacity: 0.7;
   display: flex;
   justify-content: center;
   margin: 0 auto;
@@ -8,12 +8,6 @@
 }
 
 @media screen and (max-width: 627px) {
-  .footer {
-    padding: 0 16px;
-  }
-}
-
-@media screen and (max-width: 1272px) {
   .footer {
     padding: 0 16px;
   }
