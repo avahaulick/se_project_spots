@@ -12,12 +12,6 @@
 
 .card__image:hover {
   cursor: pointer;
-  opacity: 0.4;
-}
-
-.card__image:hover {
-  cursor: pointer;
-  opacity: 0.4;
 }
 
 .card__content {
@@ -27,6 +21,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  top: 12px;
 }
 
 .card__title {
@@ -36,8 +31,10 @@
   line-height: 120%;
   color: rgba(33, 33, 33, 1);
   text-overflow: ellipsis;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 353px;
+  margin: 0;
 }
 
 .card__like-btn {
