@@ -145,6 +145,7 @@
 
 .modal__error {
   display: block;
+  display: none;
   color: red;
   margin-top: 8px;
 }
