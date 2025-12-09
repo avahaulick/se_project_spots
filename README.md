@@ -28,6 +28,9 @@ This project is made so all the elements are displayed correctly on popular scre
 
 Check out this link https://drive.google.com/file/d/1iqRpX9T5tF9lJTnL7Y6F4pfg_rOTBNhA/view?usp=drive_link where I describe the challenges I faced and my project in detail!
 
+Here is My next Project Pitch Link!
+https://www.loom.com/share/d9bb6c2f392848529ee5b8d2ab7fd895
+
 # Git Hub URL link
 
 Check out the site live on get hub at git@github.com:avahaulick/se_project_spots.git

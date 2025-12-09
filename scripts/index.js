@@ -1,3 +1,5 @@
+//ToDo pass settings object to the validation functions that are called in this file
+
 const initialCards = [
   {
     name: "Golden Gate Bridge",
@@ -142,6 +144,7 @@ function handleAddCardSubmit(evt) {
 
   closeModal(newPostModal);
   evt.target.reset();
+  disableButton(profileAddBtn, settings);
 }
 
 newPostForm.addEventListener("submit", handleAddCardSubmit);

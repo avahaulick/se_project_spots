@@ -112,6 +112,8 @@
   font-size: 16px;
   line-height: 110.00000000000001%;
   color: #212121;
+  margin-bottom: 32px;
+  display: block;
 }
 
 .modal__input {
@@ -129,12 +131,22 @@
   box-sizing: border-box;
 }
 
+.modal__input_type_error {
+  border: 1px solid rgba(255, 0, 0, 0.6);
+}
+
 .modal__input::placeholder {
   color: #2121214d;
 }
 
 .modal__image-container {
   position: relative;
+}
+
+.modal__error {
+  display: block;
+  color: red;
+  margin-top: 8px;
 }
 
 .modal__image {
