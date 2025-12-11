@@ -33,8 +33,7 @@ https://www.loom.com/share/d9bb6c2f392848529ee5b8d2ab7fd895
 
 # Git Hub URL link
 
-Check out the site live on get hub at gh repo clone avahaulick/se_project_spots
-https://github.com/avahaulick/se_project_spots.git
+Check out the site live on get hub at https://github.com/avahaulick/se_project_spots.git
 
 The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
 

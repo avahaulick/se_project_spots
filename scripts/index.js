@@ -1,5 +1,4 @@
-//ToDo pass settings object to the validation functions that are called in this file
-
+//Ok I think it is perfect now, please let me know!
 const initialCards = [
   {
     name: "Golden Gate Bridge",
@@ -93,21 +92,31 @@ function getCardElement(data) {
   return cardElement;
 }
 
-//Please help with Escape and modalOverlay Closing Event, I am not sure where to go with this
-//The uncommented Section is the code I have but somewhere it is Broken
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
-  // Add the event listener for the key down event
-  // console log the the evt.key
-  //modal.classList.addEventListener("keydown", closeModal (evt) {
-  // if (input.escape === escapeKey)
-  // if (input.escape === modalOverlay)
-  // closeModal();});
+  document.addEventListener("keydown", handleEscapeKey);
+  modal.addEventListener("mousedown", handleOverlayClick);
+}
+
+function handleEscapeKey(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+}
+
+function handleOverlayClick(evt) {
+  if (evt.target.classList.contains("modal_is-opened")) {
+    closeModal(evt.target);
+  }
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
-  // form.reset();
+  document.removeEventListener("keydown", handleEscapeKey);
+  modal.removeEventListener("mousedown", handleOverlayClick);
 }
 
 editProfileBtn.addEventListener("click", function () {
@@ -155,7 +164,7 @@ function handleAddCardSubmit(evt) {
 
   closeModal(newPostModal);
   evt.target.reset();
-  disableButton(profileAddBtn, settings);
+  disableButton(modal__submit - btn, settings);
 }
 
 newPostForm.addEventListener("submit", handleAddCardSubmit);
