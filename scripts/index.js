@@ -93,17 +93,28 @@ function getCardElement(data) {
   return cardElement;
 }
 
+//Please help with Escape and modalOverlay Closing Event, I am not sure where to go with this
+//The uncommented Section is the code I have but somewhere it is Broken
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  // Add the event listener for the key down event
+  // console log the the evt.key
+  //modal.classList.addEventListener("keydown", closeModal (evt) {
+  // if (input.escape === escapeKey)
+  // if (input.escape === modalOverlay)
+  // closeModal();});
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  // form.reset();
 }
 
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+
+  resetValidation(editProfileForm, settings);
   openModal(editProfileModal);
 });
 

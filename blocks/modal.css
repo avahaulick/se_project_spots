@@ -30,6 +30,7 @@
   background-color: #fff;
   padding: 32px 50px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .modal__close-btn {
@@ -89,6 +90,11 @@
   transition-delay: 0s;
 }
 
+.modal__submit-btn_disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .modal__title {
   max-width: 169px;
   width: 100%;
@@ -145,7 +151,6 @@
 
 .modal__error {
   display: block;
-  display: none;
   color: red;
   margin-top: 8px;
 }
