@@ -42,7 +42,7 @@
 }
 
 .card__like-btn_active {
-  background-image: url(/images/like-active.svg);
+  background-image: url(../images/like-active.svg);
   opacity: 1;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .card__like-btn_active:hover {
-  background-image: url(/images/like-active.svg);
+  background-image: url(../images/like-active.svg);
   opacity: 0.4;
 }
 

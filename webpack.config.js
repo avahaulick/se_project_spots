@@ -8,7 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
-    publicPath: "/",
+    publicPath: "",
   },
   mode: "development",
   devServer: {
@@ -29,13 +29,8 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
         type: "asset/resource",
-        parser: {
-          dataUrlCondition: {
-            maxSize: 8 * 1024,
-          },
-        },
         generator: {
           filename: "images/[name].[hash][ext]",
         },
@@ -47,12 +42,38 @@ module.exports = {
           filename: "fonts/[name].[hash][ext]",
         },
       },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
+            options: {
+              sources: {
+                list: [
+                  {
+                    tag: "img",
+                    attribute: "src",
+                    type: "src",
+                  },
+                  {
+                    tag: "link",
+                    attribute: "href",
+                    type: "src",
+                    filter: (tag, attribute, attributes) => {
+                      return attributes.rel === "shortcut icon";
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
-      favicon: "./src/images/favicon.ico",
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
