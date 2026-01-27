@@ -12,10 +12,17 @@
   <body>
     <div class="page">
       <header class="header">
-        <img src="./images/logo.svg" alt="Spot Logo" class="header__logo" />
+        <img src="<%=require('./images/logo.svg')%>" alt="Spot Logo" class="header__logo" />
       </header>
       <main class="content">
         <section class="profile page__section">
+          <button class="profile__avatar-btn">
+            <img
+            src="<%=require('./images/pencil-light.svg')%>"
+            alt="Pencil Icon"
+            class="profile__pencil-icon"
+          />
+          </button>
           <img
             src="./images/avatar.jpg"
             alt="Bessie Coleman"
@@ -107,16 +114,37 @@
           </form>
         </div>
       </div>
-    </div>
- <div class="modal modal_type_preview" id="preview-modal">
-        <div class="modal__image-container">
-          <button type="button" class="modal__close-btn modal__close-btn_type_preview">
-            <img src="./images/closebuttonpreview.svg" alt="Close Button" />
+      <div class="modal" id="edit-avatar-modal">
+        <div class="modal__container">
+          <button type="button" class="modal__close-btn">
+            <img src="./images/closebutton.svg" alt="Close Button" />
           </button>
-          <img src= "#" alt="" class="modal__image">
-          <p class="modal__caption"></p>
-
+          <h2 class="modal__title">Change profile picture</h2>
+          <form class="modal__form">
+            <label for="avatar-url-input" class="modal__label">
+              Image link
+              <input
+                id="avatar-url-input"
+                type="url"
+                class="modal__input"
+                placeholder="Paste a link to the picture"
+                required
+              />
+            </label>
+            <button type="submit" class="modal__submit-btn">Save</button>
+          </form>
         </div>
+      </div>
+    </div>
+      </div>
+    </div>
+    <div class="modal modal_type_preview" id="preview-modal">
+      <div class="modal__image-container">
+        <button type="button" class="modal__close-btn modal__close-btn_type_preview">
+          <img src="./images/closebuttonpreview.svg" alt="Close Button" />
+        </button>
+        <img src="#" alt="" class="modal__image">
+        <p class="modal__caption"></p>
       </div>
     </div>
   </body>
