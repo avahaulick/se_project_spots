@@ -44,7 +44,9 @@
   height: 40px;
   display: flex;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
+  z-index: 1;
 }
 
 .modal__close-btn_type_preview {
@@ -69,6 +71,7 @@
   max-width: 156px;
   width: 100%;
   border-radius: 8px;
+  border: none;
   padding-top: 18px;
   padding-right: 32px;
   padding-bottom: 18px;
@@ -81,6 +84,7 @@
   font-size: 16px;
   line-height: 100%;
   color: #fff;
+  cursor: pointer;
 }
 
 .modal__submit-btn:hover {
@@ -221,6 +225,8 @@
   top: -12px;
   right: -52px;
   background-color: transparent;
+  cursor: pointer;
+  z-index: 1;
 }
 
 .modal__close-btn_type_delete img {

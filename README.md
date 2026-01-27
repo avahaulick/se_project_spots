@@ -28,6 +28,9 @@ This project is made so all the elements are displayed correctly on popular scre
 
 Check out this link https://drive.google.com/file/d/1iqRpX9T5tF9lJTnL7Y6F4pfg_rOTBNhA/view?usp=drive_link where I describe the challenges I faced and my project in detail!
 
+My New video is located form Loom on this link, I am not paying 240 Dollars a month and loom no longer lets me download videos, this needs to be the work around
+https://www.loom.com/share/8f43fb24205c4c8993fba25f1af40e7d
+
 # Git Hub URL link
 
 Check out the site live on get hub at git@github.com:avahaulick/se_project_spots.git

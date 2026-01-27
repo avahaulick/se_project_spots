@@ -7,7 +7,7 @@ import "../pages/index.css";
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
-    authorization: "e6f9c542-96e2-4dff-be47-54fa70bb6f09",
+    authorization: "3f838d2d-f5e5-44f4-be4d-2b33528252b7",
     "Content-Type": "application/json",
   },
 });
@@ -172,10 +172,29 @@ function getCardElement(data) {
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", handleEscapeKey);
+  modal.addEventListener("mousedown", handleOverlayClick);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", handleEscapeKey);
+  modal.removeEventListener("mousedown", handleOverlayClick);
+}
+
+function handleEscapeKey(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+}
+
+function handleOverlayClick(evt) {
+  if (evt.target === evt.currentTarget) {
+    closeModal(evt.target);
+  }
 }
 
 editProfileBtn.addEventListener("click", function () {
@@ -262,7 +281,19 @@ function handleAvatarSubmit(evt) {
       closeModal(avatarModal);
       avatarForm.reset();
     })
-    .catch(console.error)
+    .catch((error) => {
+      console.error("❌ Error updating avatar:", error);
+      console.error("🔑 Your authorization token is INVALID or EXPIRED");
+      console.error(
+        "📋 To fix: Replace the token in index.js with a valid TripleTen token",
+      );
+      console.error(
+        "🔗 Contact your TripleTen mentor or check your project brief for the correct token",
+      );
+      alert(
+        "Failed to update avatar. Your authorization token is invalid. Check the console for details.",
+      );
+    })
     .finally(() => {
       renderLoading(avatarSubmitBtn, false);
     });
@@ -292,6 +323,18 @@ deleteCancelBtn.addEventListener("click", function () {
 // Handler for delete confirmation submission
 function handleDeleteSubmit(evt) {
   evt.preventDefault();
+
+  if (!selectedCardId) {
+    console.error("No card ID selected for deletion");
+    // If there's no ID (local card), just remove it from DOM
+    if (selectedCard) {
+      selectedCard.remove();
+      closeModal(deleteModal);
+      selectedCard = null;
+    }
+    return;
+  }
+
   renderLoading(deleteSubmitBtn, true, "Deleting...");
   api
     .removeCard(selectedCardId)
@@ -301,7 +344,9 @@ function handleDeleteSubmit(evt) {
       selectedCard = null;
       selectedCardId = null;
     })
-    .catch(console.error)
+    .catch((error) => {
+      console.error("Error deleting card:", error);
+    })
     .finally(() => {
       renderLoading(deleteSubmitBtn, false);
     });
