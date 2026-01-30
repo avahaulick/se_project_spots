@@ -23,37 +23,6 @@ const validationConfig = {
 
 enableValidation(validationConfig);
 
-const initialCards = [
-  {
-    name: "Golden Gate Bridge",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
-  },
-  {
-    name: "Val Thorens",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
-  {
-    name: "Restaurant terrace",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
-  },
-  {
-    name: "An outdoor cafe",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
-  },
-  {
-    name: "A very long bridge, over the forest and through the trees",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
-  },
-  {
-    name: "Tunnel with morning light",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
-  },
-  {
-    name: "Mountain house",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
-];
-
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileForm = editProfileModal.querySelector(".modal__form");
@@ -132,6 +101,9 @@ const cardTemplate = document
   .content.querySelector(".card");
 const cardsList = document.querySelector(".cards__list");
 
+// Variable to store current user ID
+let currentUserId = null;
+
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitleEl = cardElement.querySelector(".card__title");
@@ -142,6 +114,15 @@ function getCardElement(data) {
   cardTitleEl.textContent = data.name;
 
   const cardLikeBtnEl = cardElement.querySelector(".card__like-btn");
+
+  // Check if current user has liked the card
+  if (data.likes && currentUserId) {
+    const isLikedByUser = data.likes.some((like) => like._id === currentUserId);
+    if (isLikedByUser) {
+      cardLikeBtnEl.classList.add("card__like-btn_active");
+    }
+  }
+
   cardLikeBtnEl.addEventListener("click", () => {
     const isLiked = cardLikeBtnEl.classList.contains("card__like-btn_active");
     const likeAction = isLiked
@@ -356,7 +337,22 @@ deleteForm.addEventListener("submit", handleDeleteSubmit);
 
 newPostForm.addEventListener("submit", handleAddCardSubmit);
 
-initialCards.forEach(function (item) {
-  const cardElement = getCardElement(item);
-  cardsList.append(cardElement);
-});
+// Load profile and cards data from API on page initialization
+api
+  .getAppInfo()
+  .then(([cardsData, userData]) => {
+    // Set current user ID for like functionality
+    currentUserId = userData._id;
+
+    // Update profile information
+    profileNameEl.textContent = userData.name;
+    profileDescriptionEl.textContent = userData.about;
+    profileAvatarEl.src = userData.avatar;
+
+    // Render cards from API
+    cardsData.forEach((cardData) => {
+      const cardElement = getCardElement(cardData);
+      cardsList.append(cardElement);
+    });
+  })
+  .catch(console.error);
