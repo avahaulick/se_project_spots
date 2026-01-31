@@ -6,6 +6,9 @@
 
 .profile__avatar-container {
   position: relative;
+  height: 190px;
+  width: 190px;
+  border-radius: 8px;
 }
 
 .profile__avatar-btn {
