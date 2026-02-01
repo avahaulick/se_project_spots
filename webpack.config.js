@@ -42,33 +42,6 @@ module.exports = {
           filename: "fonts/[name].[hash][ext]",
         },
       },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader",
-            options: {
-              sources: {
-                list: [
-                  {
-                    tag: "img",
-                    attribute: "src",
-                    type: "src",
-                  },
-                  {
-                    tag: "link",
-                    attribute: "href",
-                    type: "src",
-                    filter: (tag, attribute, attributes) => {
-                      return attributes.rel === "shortcut icon";
-                    },
-                  },
-                ],
-              },
-            },
-          },
-        ],
-      },
     ],
   },
   plugins: [
