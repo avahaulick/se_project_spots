@@ -78,16 +78,7 @@ function renderLoading(button, isLoading, loadingText = "Saving...") {
   if (isLoading) {
     button.textContent = loadingText;
   } else {
-    // Restore original text based on button type
-    if (button === editProfileSubmitBtn) {
-      button.textContent = "Save";
-    } else if (button === newPostSubmitBtn) {
-      button.textContent = "Save";
-    } else if (button === avatarSubmitBtn) {
-      button.textContent = "Save";
-    } else if (button === deleteSubmitBtn) {
-      button.textContent = "Delete";
-    }
+    button.textContent = button !== deleteSubmitBtn ? "Save" : "Delete";
   }
 }
 
@@ -116,11 +107,8 @@ function getCardElement(data) {
   const cardLikeBtnEl = cardElement.querySelector(".card__like-btn");
 
   // Check if current user has liked the card
-  if (data.likes && currentUserId) {
-    const isLikedByUser = data.likes.some((like) => like._id === currentUserId);
-    if (isLikedByUser) {
-      cardLikeBtnEl.classList.add("card__like-btn_active");
-    }
+  if (data.isLiked) {
+    cardLikeBtnEl.classList.add("card__like-btn_active");
   }
 
   cardLikeBtnEl.addEventListener("click", () => {
@@ -130,7 +118,9 @@ function getCardElement(data) {
       : api.likeCard(data._id);
 
     likeAction
-      .then(() => {
+      .then((updatedCard) => {
+        // Update the data.isLiked property with the response from the server
+        data.isLiked = updatedCard.isLiked;
         cardLikeBtnEl.classList.toggle("card__like-btn_active");
       })
       .catch(console.error);
@@ -238,6 +228,7 @@ function handleAddCardSubmit(evt) {
       cardsList.prepend(cardElement);
       closeModal(newPostModal);
       newPostForm.reset();
+      resetValidation(newPostForm, validationConfig);
     })
     .catch(console.error)
     .finally(() => {
@@ -262,6 +253,7 @@ function handleAvatarSubmit(evt) {
       profileAvatarEl.src = userData.avatar;
       closeModal(avatarModal);
       avatarForm.reset();
+      resetValidation(avatarForm, validationConfig);
     })
     .catch((error) => {
       console.error("❌ Error updating avatar:", error);
