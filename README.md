@@ -28,12 +28,12 @@ This project is made so all the elements are displayed correctly on popular scre
 
 Check out this link https://drive.google.com/file/d/1iqRpX9T5tF9lJTnL7Y6F4pfg_rOTBNhA/view?usp=drive_link where I describe the challenges I faced and my project in detail!
 
-Here is My next Project Pitch Link!
-https://www.loom.com/share/d9bb6c2f392848529ee5b8d2ab7fd895
+My New video is located form Loom on this link, I am not paying 240 Dollars a month and loom no longer lets me download videos, this needs to be the work around
+https://www.loom.com/share/8f43fb24205c4c8993fba25f1af40e7d
 
 # Git Hub URL link
 
-Check out the site live on get hub at https://github.com/avahaulick/se_project_spots.git
+Check out the site live on get hub at git@github.com:avahaulick/se_project_spots.git
 
 The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
 

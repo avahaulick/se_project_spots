@@ -53,10 +53,10 @@
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">
-            <img src="./images/closebutton.svg" alt="Close Button" />
+            <img src="./images/closebutton.svg" alt="Submit Button" />
           </button>
           <h2 class="modal__title">Edit profile</h2>
-          <form class="modal__form" novalidate>
+          <form class="modal__form">
             <label for="profile-name-input" class="modal__label">
               Name
               <input
@@ -64,11 +64,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your name"
-                minlength="2"
-                maxlength="40"
-                required
               />
-              <span id="profile-name-input-error" class="modal__error"></span>
             </label>
             <label for="profile-description-input" class="modal__label">
               Description
@@ -77,14 +73,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Describe yourself"
-                minlength="2"
-                maxlength="200"
-                required
               />
-              <span
-                id="profile-description-input-error"
-                class="modal__error"
-              ></span>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
@@ -93,10 +82,10 @@
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">
-            <img src="./images/closebutton.svg" alt="Close Button" />
+            <img src="./images/closebutton.svg" alt="Submit Button" />
           </button>
           <h2 class="modal__title">New post</h2>
-          <form class="modal__form" novalidate>
+          <form class="modal__form">
             <label for="card-image-input" class="modal__label">
               Image link
               <input
@@ -104,9 +93,7 @@
                 type="url"
                 class="modal__input"
                 placeholder="Paste a link to the picture"
-                required
               />
-              <span id="card-image-input-error" class="modal__error"></span>
             </label>
             <label for="image-caption-input" class="modal__label">
               Caption
@@ -115,30 +102,25 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
-                minlength="2"
-                maxlength="30"
-                required
               />
-              <span id="image-caption-input-error" class="modal__error"></span>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
       </div>
     </div>
-    <div class="modal modal_type_preview" id="preview-modal">
-      <div class="modal__image-container">
-        <button
-          type="button"
-          class="modal__close-btn modal__close-btn_type_preview"
-        >
-          <img src="./images/closebuttonpreview.svg" alt="Close Button" />
-        </button>
-        <img src="#" alt="" class="modal__image" />
-        <p class="modal__caption"></p>
+ <div class="modal modal_type_preview" id="preview-modal">
+        <div class="modal__image-container">
+          <button type="button" class="modal__close-btn modal__close-btn_type_preview">
+            <img src="./images/closebuttonpreview.svg" alt="Close Button" />
+          </button>
+          <img src= "#" alt="" class="modal__image">
+          <p class="modal__caption"></p>
+
+        </div>
       </div>
     </div>
-    <script defer src="./scripts/validation.js"></script>
-    <script defer src="./scripts/index.js"></script>
+
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

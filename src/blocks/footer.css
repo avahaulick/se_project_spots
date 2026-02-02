@@ -1,14 +1,14 @@
 .footer {
   font-family: Poppins, Arial, Helvetica, sans-serif;
-  opacity: 0.7;
+  opacity: 70%;
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  padding: 60px;
+  padding: 60px 0;
 }
 
 @media screen and (max-width: 627px) {
   .footer {
-    padding: 0 16px;
+    padding: 60px 16px;
   }
 }
