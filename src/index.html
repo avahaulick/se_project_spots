@@ -12,14 +12,18 @@
   <body>
     <div class="page">
       <header class="header">
-        <img src="./images/logo.svg" alt="Spot Logo" class="header__logo" />
+        <img
+          src="<%=require('./images/logo.svg')%>"
+          alt="Spot Logo"
+          class="header__logo"
+        />
       </header>
       <main class="content">
         <section class="profile page__section">
           <div class="profile__avatar-container">
             <button type="button" class="profile__avatar-btn">
               <img
-                src="./images/pencil-light.svg"
+                src="<%=require('./images/pencil-light.svg')%>"
                 alt="Pencil Icon"
                 class="profile__pencil-icon"
               />
@@ -30,12 +34,12 @@
             <h1 class="profile__name"></h1>
             <p class="profile__description"></p>
             <button type="button" class="profile__edit-btn">
-              <img src="./images/group2.svg" alt="Edit icon" />
+              <img src="<%=require('./images/group2.svg')%>" alt="Edit icon" />
               <span>Edit Profile</span>
             </button>
           </div>
           <button type="button" class="profile__add-btn">
-            <img src="./images/group26.svg" alt="Plus icon" />
+            <img src="<%=require('./images/group26.svg')%>" alt="Plus icon" />
             <span>New Post</span>
           </button>
         </section>
@@ -56,9 +60,7 @@
       <footer class="footer">2025 &copy; Spots</footer>
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn">
-            <img src="./images/closebutton.svg" alt="Submit Button" />
-          </button>
+          <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">Edit profile</h2>
           <form class="modal__form">
             <label for="profile-name-input" class="modal__label">
@@ -93,9 +95,7 @@
       </div>
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn">
-            <img src="./images/closebutton.svg" alt="Submit Button" />
-          </button>
+          <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">New post</h2>
           <form class="modal__form">
             <label for="card-image-input" class="modal__label">
@@ -128,9 +128,7 @@
       </div>
       <div class="modal" id="edit-avatar-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn">
-            <img src="./images/closebutton.svg" alt="Close Button" />
-          </button>
+          <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">Change profile picture</h2>
           <form class="modal__form">
             <label for="avatar-url-input" class="modal__label">
@@ -154,9 +152,7 @@
         <button
           type="button"
           class="modal__close-btn modal__close-btn_type_preview"
-        >
-          <img src="./images/closebuttonpreview.svg" alt="Close Button" />
-        </button>
+        ></button>
         <img src="#" alt="" class="modal__image" />
         <p class="modal__caption"></p>
       </div>
@@ -164,9 +160,7 @@
 
     <div class="modal" id="avatar-modal">
       <div class="modal__container modal__container_type_avatar">
-        <button type="button" class="modal__close-btn">
-          <img src="./images/closebutton.svg" alt="Submit Button" />
-        </button>
+        <button type="button" class="modal__close-btn"></button>
         <h2 class="modal__title modal__title_type_avatar">
           Edit profile avatar
         </h2>
@@ -197,9 +191,7 @@
         <button
           type="button"
           class="modal__close-btn modal__close-btn_type_delete"
-        >
-          <img src="./images/closebutton.svg" alt="Close Button" />
-        </button>
+        ></button>
         <h2 class="modal__title modal__title_type_delete">
           Are you sure you want to delete this image
         </h2>
