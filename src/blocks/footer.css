@@ -4,17 +4,11 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  padding: 60px;
+  padding: 60px 0;
 }
 
 @media screen and (max-width: 627px) {
   .footer {
-    padding: 0 16px;
-  }
-}
-
-@media screen and (max-width: 1272px) {
-  .footer {
-    padding: 0 16px;
+    padding: 60px 16px;
   }
 }

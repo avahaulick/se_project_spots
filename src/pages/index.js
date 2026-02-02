@@ -1,4 +1,4 @@
-import { enableValidation } from "../scripts/validation.js";
+import { enableValidation, resetValidation } from "../scripts/validation.js";
 import Api from "../util/Api.js";
 import "../vendor/normalize.css";
 import "../vendor/fonts.css";
@@ -181,6 +181,7 @@ function handleOverlayClick(evt) {
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+  resetValidation(editProfileForm, validationConfig);
   openModal(editProfileModal);
 });
 
